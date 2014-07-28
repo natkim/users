@@ -20,4 +20,9 @@ class ApplicationController < ActionController::Base
       redirect_to "/users/#{ u.id }"
   end
   
+  def destroy
+    u = User.find_by_id(params['id'])
+    u.destroy
+  end
+      
 end
